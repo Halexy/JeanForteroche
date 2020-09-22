@@ -12,10 +12,11 @@ class TextField extends Field
  
     if (!empty($this->errorMessage))
     {
-      $widget .= $this->errorMessage.'<br />';
+      $widget .= '<p class="errormsg">'. $this->errorMessage. '</p> <br />';
     }
+
  
-    $widget .= '<label>'.$this->label.'</label><textarea name="'.$this->name.'"';
+    $widget .= '<label class="label">'.$this->label.'</label><textarea name="'.$this->name.'" class="textarea"';
  
     if (!empty($this->cols))
     {
