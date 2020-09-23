@@ -1,3 +1,5 @@
+<div class= "container comment">
+
 <p>Par <em><?= $news['auteur'] ?></em>, le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
 <h2><?= $news['titre'] ?></h2>
 <p><?= nl2br($news['contenu']) ?></p>
@@ -34,3 +36,5 @@ foreach ($comments as $comment)
 ?>
  
 <p><a href="commenter-<?= $news['id'] ?>.html">Ajouter un commentaire</a></p>
+
+</div>

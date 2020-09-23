@@ -11,10 +11,10 @@ class StringField extends Field
  
     if (!empty($this->errorMessage))
     {
-      $widget .= $this->errorMessage.'<br />';
+      $widget .= '<p class="errormsg">'. $this->errorMessage. '</p> <br />';
     }
  
-    $widget .= '<label>'.$this->label.'</label><input type="text" name="'.$this->name.'"';
+    $widget .= '<label class="label">'.$this->label.'</label><input type="text" name="'.$this->name.'" class="fadeIn second" ';
  
     if (!empty($this->value))
     {

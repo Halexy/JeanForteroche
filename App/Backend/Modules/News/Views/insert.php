@@ -1,8 +1,21 @@
-<h2>Ajouter une news</h2>
-<form action="" method="post">
-  <p>
-    <?= $form ?>
- 
-    <input type="submit" value="Ajouter" />
-  </p>
-</form>
+<div class="wrapper fadeInDown">
+  <div class="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="/images/add-news-icon.PNG" class="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <h2>Ajouter une news</h2>
+      <form action="" method="post">
+        <p>
+          <?= $form ?>
+      
+          <input type="submit" value="Ajouter" />
+        </p>
+      </form>
+
+  </div>
+</div>
