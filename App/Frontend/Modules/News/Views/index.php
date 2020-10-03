@@ -1,22 +1,14 @@
+<H2 class="col-12 text-center">Les nouveautés de Jean Forteroche</H2>
 <?php
 foreach ($listeNews as $news)
 {
 ?>
-<div class= "container liste_news">
-
-    <div class= "row">
-      <div class= "col-10 h2_listenews">
-        <h2><?= $news['titre'] ?></h2>
-      </div>
-    </div>
-
-    <div class= "row">
-      <div class= "col-10 p_listenews">
-        <p><?= nl2br($news['contenu']) ?></p>
-        <a href="news-<?= $news['id'] ?>.html" class="btn" role="button">Lire plus</a>
-      </div>
-    </div>
-    
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h2 class="card-title text-uppercase"><?= $news['titre'] ?></h2>
+    <p class="card-text lead"><?= nl2br($news['contenu']) ?></p>
+    <a href="news-<?= $news['id'] ?>.html" class="btn" role="button">Lire plus</a>
+  </div>
 </div>
 <?php
 }

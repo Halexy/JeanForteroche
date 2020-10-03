@@ -67,4 +67,6 @@ class Comment extends Entity
   {
     return $this->date;
   }
+
+
 }

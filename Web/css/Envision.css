@@ -10,22 +10,21 @@
 
 
 
-body
+html, body
 {
     max-width: 100vw;
     background-color: var(--sample-bg-color);
+    min-height: 100%;
 }
 
 h1
 {
-    font-size: 3vw;
     color: var(--title-color);
     font-family: 'Lora', serif;
 }
 
 h2
 {
-    font-size: 2vw;
     color: var(--title-color);
     font-family: 'Lora', serif;
     padding: 0.5vw 0;
@@ -35,7 +34,6 @@ h2
 h3
 {
     color: var(--icon-color);
-    font-size: 1vw;
     font-family: 'Lora', serif;
     padding: 0.2vw 0;
 }
@@ -43,14 +41,12 @@ h3
 h4
 {
     color: var(--icon-color);
-    font-size: 2vw;
     font-family: 'Lora', serif;
     padding: 0.5vw 0;
 }
 
 p
 {
-    font-size: 1vw;
     color: var(--black-color);
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -63,7 +59,7 @@ p
 }
 
 
-/* BUTTON */
+/* BUTTON 
 
 .btn
 {
@@ -104,11 +100,15 @@ p
   transition: all .25s ease;
 
 }
+*/
+/* CONTENT-WRAP */
 
 /* FOOTER */
 
 footer {
   background: #000000;
+  height: 300px;
+  margin-top: 70px;
 }
 
 footer p, i
@@ -203,47 +203,36 @@ footer hr, h5
     min-height: 50vw;
 }
 
-.card
+
+/* CARD */
+
+.card 
 {
-    width: 17vw;
-    max-height: 30vw;
-    margin: 2vw auto;
-    border-radius: 1vw;
-    background-color: transparent;
-    border-color: var(--icon-color);
-    padding: 0;
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  
+  margin: 2vw auto;
+  border-radius: 5px;
 }
 
-.card>img
+.card:hover 
 {
-    border-radius: 1vw;
-    max-height: 20vw;
-    
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.card-text
+.card .btn
 {
-    color: #FAFAFA;
+  margin-bottom: 15px;
 }
 
-.card-body>button
+.card-body 
 {
-    background-color: var(--sample-bg-color);
-    color: var(--title-color);
-    border-color: var(--title-color);
-}
-
-.card-body>button:hover
-{
-    background-color: var(--title-color);
-    color: var(--sample-bg-color);
-    border-color: var(--sample-bg-color);
+  padding: 2px 16px;
 }
 
 
-
-
-/*connexion*/
+/* FORM */
 
 /* BASIC */
   
@@ -315,18 +304,18 @@ footer hr, h5
   
   /* FORM TYPOGRAPHY*/
   
-  input[type=button], input[type=submit], input[type=reset]  {
+  input[type=button], input[type=submit], input[type=reset], .btn  {
     background-color: var(--title-color);
     border: none;
     color: var(--icon-color);
-    padding: 15px 80px;
+    padding: 15px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     text-transform: uppercase;
     font-size: 13px;
-    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 15px 20px 40px 20px;
@@ -337,12 +326,12 @@ footer hr, h5
     transition: all 0.3s ease-in-out;
   }
   
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, .btn:hover  {
     background-color: var(--icon-color);
-    color: var(--title-color);
+    color: var(--title-color) !important;
   }
   
-  input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  input[type=button]:active, input[type=submit]:active, input[type=reset]:active, .btn:active  {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);

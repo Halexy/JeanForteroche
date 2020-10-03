@@ -24,6 +24,10 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/187a31dc66.js" crossorigin="anonymous"></script>
 
+    <!-- tinyMCE 5 -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+
 
     <link rel="stylesheet" href="/css/Envision.css">
   </header>
@@ -74,7 +78,7 @@
 
         </nav>
       </header>
-
+    </div>
 
 
       <!--
@@ -106,44 +110,52 @@
 
         </div>
       </div>
-            -->
-      <div id="content-wrap">
-        <section id="main">
-          <?php if ($user->hasFlash()) echo '<p class="hasflash">', $user->getFlash(), '</p>'; ?>
- 
-          <?= $content ?>
-        </section>
-      </div>
- 
-          <!-- Et voici notre pied de page utilisé sur toutes les pages du site -->
-<!-- Footer -->
-<footer>
+              -->
 
-  <!-- Footer Text -->
+<!-- content-wrap -->
+  <div id="content-wrap" class="container-fluid">
+
+
+    <section id="main">
+      <div class="row">
+        <?php if ($user->hasFlash()) echo '<p class="hasflash">', $user->getFlash(), '</p>'; ?>
+
+        <?= $content ?>
+      </div>
+    </section>
+
+  </div>
+
+
+<!-- Pied de page --> 
+<!-- Footer -->
+  <footer class= "page-footer font-small teal pt-4">
+
+<!-- Footer Text -->
   <div class="container-fluid text-center text-md-left">
 
-    <!-- Grid row -->
+  <!-- Grid row -->
     <div class="row">
 
-      <!-- Grid column -->
+    <!-- Grid column -->
       <div class="col-md-6 mt-md-0">
 
-        <!-- Content -->
+      <!-- Content -->
         <h5 class="text-uppercase font-weight-bold">Jean Forteroche</h5>
         <p style="padding: 0 60px;">
-          Jean Forteroche est un auteur / écrivain mettant en avant ses différentes oeuvres sur son site internet.
-          Acteur depuis son adolescence, il est devenu plus tard célèbre pour avoir joué dans certains films.
-          Il est également connu pour avoir publié plusieurs ouvrages célèbres sur l'histoire de France, 
-          aujourd'hui il souhaiterait vous faire partarger ses dernières nouveautés.
+        Jean Forteroche est un auteur / écrivain mettant en avant ses différentes oeuvres sur son site internet.
+        Acteur depuis son adolescence, il est devenu plus tard célèbre pour avoir joué dans certains films.
+        Il est également connu pour avoir publié plusieurs ouvrages célèbres sur l'histoire de France, 
+        aujourd'hui il souhaiterait vous faire partarger ses dernières nouveautés.
         </p>
 
       </div>
- 
 
-      <!-- Grid column -->
+
+    <!-- Grid column -->
       <div class="col-md-6 mb-md-0 mb-3">
 
-        <!-- Content -->
+      <!-- Content -->
         <h5 class="text-uppercase font-weight-bold">Contact</h5>
         <hr>
         <p>
@@ -156,23 +168,18 @@
           <i class="fas fa-print mr-3"></i> 06.87.25.16.55 </p>
 
       </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
 
   </div>
-  <!-- Footer Text -->
 
-  <!-- Copyright -->
+</div>
+
+<!-- Footer Text -->
+<!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
     <a href="http://www.alexyhajjar.fr/"> AlexyHajjar</a>
   </div>
-  <!-- Copyright -->
 
 </footer>
-<!-- Footer -->
-  </div>
 
 
 
