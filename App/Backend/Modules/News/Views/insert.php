@@ -12,6 +12,11 @@
       <form action="" method="post">
         <p>
           <?= $form ?>
+
+          <form name="fo" method="post" action="" enctype="multipart/form-data">
+                    <input type="file" name="image" /></br>
+                    <input type="submit" name="valider" value="charger"/>
+          </form>
       
           <input type="submit" value="Ajouter" />
         </p>

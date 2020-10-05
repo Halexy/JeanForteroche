@@ -14,7 +14,6 @@ html, body
 {
     max-width: 100vw;
     background-color: var(--sample-bg-color);
-    min-height: 100%;
 }
 
 h1
@@ -58,69 +57,23 @@ p
     margin: 0;
 }
 
-
-/* BUTTON 
-
-.btn
-{
-  background: var(--title-color);
-  color: var(--icon-color);
-  border-radius: 30px;
-  transition: all .25s ease;
-}
-
-.btn:hover
-{
-  color: var(--icon-color);
-  transform: translate(-12px, -12px);
-}
-
-.btn:hover:after
-{
-  transform: translate(6px, 6px);
-}
-
-.btn:hover:before
-{
-  transform: translate(12px, 12px);
-}
-
-.btn:hover:after, .btn:hover:before
-{
-  content: '';
-  position: absolute;
-  opacity: 0.3;
-  background: var(--title-color);
-  border-radius: inherit;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  transition: all .25s ease;
-
-}
-*/
-/* CONTENT-WRAP */
-
 /* FOOTER */
 
 footer {
   background: #000000;
-  height: 300px;
-  margin-top: 70px;
+
 }
 
 footer p, i
 {
   color: var(--white-color);
-  font-size: 0.8vw;
+  font-size: 0.9vw;
   text-align: center;
 }
 
-footer hr, h5
+footer h5
 {
-  margin: 10px;
+  margin: 5px 0;
   text-align: center;
   color : var(--icon-color);
 }
@@ -369,7 +322,6 @@ footer hr, h5
     color: #cccccc;
   }
   
-  
   /* ANIMATIONS */
   
   /* Simple CSS3 Fade-in-down Animation */
@@ -595,14 +547,29 @@ footer hr, h5
 
   /* COMMENTS */
 
-  .comment
-  {
-    width: 90%;
-    margin: auto;
-    background-color: var(--white-color);
-    margin-top: 25px;
-    border-radius: 25px;
-    padding: 25px;
-    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  }
+.comment
+{
+  width: 90%;
+  margin: auto;
+  background-color: var(--white-color);
+  margin-top: 25px;
+  border-radius: 25px;
+  padding: 25px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+}
+
+.espace_commentaire
+{
+  margin-top: 50px !important;
+  border-top: 1px solid var(--black-color);
+  width: 80%;
+}
+
+.commentaires
+{
+  margin: 50px 0;
+  border: 1px solid var(--title-color);
+  border-radius: 25px;
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.1);
+}

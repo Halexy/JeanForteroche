@@ -27,8 +27,6 @@
     <!-- tinyMCE 5 -->
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-
-
     <link rel="stylesheet" href="/css/Envision.css">
   </header>
  
@@ -127,51 +125,44 @@
   </div>
 
 
+
+
+
 <!-- Pied de page --> 
 <!-- Footer -->
-  <footer class= "page-footer font-small teal pt-4">
+  <footer class= "page-footer pt-4 mt-5 sticky-bottom">
 
 <!-- Footer Text -->
-  <div class="container-fluid text-center text-md-left">
 
-  <!-- Grid row -->
-    <div class="row">
+<h5 class="text-uppercase font-weight-bold">Contact</h5>
+    <!-- Grid row -->
 
-    <!-- Grid column -->
-      <div class="col-md-6 mt-md-0">
 
-      <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Jean Forteroche</h5>
-        <p style="padding: 0 60px;">
-        Jean Forteroche est un auteur / écrivain mettant en avant ses différentes oeuvres sur son site internet.
-        Acteur depuis son adolescence, il est devenu plus tard célèbre pour avoir joué dans certains films.
-        Il est également connu pour avoir publié plusieurs ouvrages célèbres sur l'histoire de France, 
-        aujourd'hui il souhaiterait vous faire partarger ses dernières nouveautés.
+
+      <div class="row mt-5">
+
+      
+        <p class="col-12 col-sm-6 col-md-3 lead">
+        <i class="fas fa-home mb-3 lead"></i></br>
+          52, rue de Penthièvre, 92800 PUTEAUX
+        </p>
+
+        <p class="col-12 col-sm-6 col-md-3 lead">
+        <i class="fas fa-envelope mb-3 lead"></i></br>
+          contact@jeanforteroche.com
+        </p>
+
+        <p class="col-12 col-sm-6 col-md-3 lead">
+        <i class="fas fa-phone mb-3 lead"></i></br>
+          01.28.04.43.39 
+        </p>
+
+        <p class="col-12 col-sm-6 col-md-3 lead">
+        <i class="fas fa-print mb-3 lead"></i></br>
+          06.87.25.16.55
         </p>
 
       </div>
-
-
-    <!-- Grid column -->
-      <div class="col-md-6 mb-md-0 mb-3">
-
-      <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Contact</h5>
-        <hr>
-        <p>
-          <i class="fas fa-home mr-3"></i> 52, rue de Penthièvre, 92800 PUTEAUX</p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> contact@jeanforteroche.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i> 01.28.04.43.39 </p>
-        <p>
-          <i class="fas fa-print mr-3"></i> 06.87.25.16.55 </p>
-
-      </div>
-
-  </div>
-
-</div>
 
 <!-- Footer Text -->
 <!-- Copyright -->
@@ -181,7 +172,32 @@
 
 </footer>
 
-
+<!-- Script tinyMCE -->
+<?php if ($user->isAuthenticated()) { ?>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      height: 500,
+      menubar: 'insert',
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount',
+        'image'
+      ],
+      toolbar: 'undo redo | formatselect | ' +
+      'bold italic backcolor | alignleft aligncenter ' +
+      'alignright alignjustify | bullist numlist outdent indent | ' +
+      'removeformat | help' +
+      'image',
+      image_list: [
+        {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
+        {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
+      ],
+      content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    });
+  </script>
+  <?php } ?>
 
     <!-- Boostrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
