@@ -31,7 +31,10 @@
         <?php if ($user->isAuthenticated()) { ?> -
           <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn" role="button">Modifier</a> |
           <a href="admin/comment-delete-<?= $comment['id'] ?>.html" class="btn" role="button">Supprimer</a>
-        <?php } ?>
+        <?php } 
+        else { ?>
+          <a href="/comment-report-<?= $comment['id'] ?>.html" class="btn" role="button">Signaler</a> 
+          <?php } ?>
         
       </legend>
       <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
