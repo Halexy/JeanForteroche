@@ -7,11 +7,13 @@
  
         <!-- Required meta tags -->
         <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/187a31dc66.js" crossorigin="anonymous"></script>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -21,11 +23,8 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/187a31dc66.js" crossorigin="anonymous"></script>
-
     <!-- tinyMCE 5 -->
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/5m2oyqax9487r7v3ga1m2tpsa3x1zwdx92jsbw1zwtrukd8s/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <link rel="stylesheet" href="/css/Envision.css">
   </header>
@@ -51,10 +50,10 @@
                 <a class="nav-link" href="http://jeanforteroche/">Acceuil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">News</a>
+                <a class="nav-link" href="http://jeanforteroche/#news">Billet simple pour l'alaska</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Disabled</a>
+                <a class="nav-link" href="http://jeanforteroche/#footer">Contact</a>
               </li>
             </ul>
 
@@ -78,126 +77,138 @@
       </header>
     </div>
 
-
-      <!--
-        
-      <div class="container-fluid">
-        <div class="row">
-
-            
-
-        <div class="banner col-2">
-          <img src="/images/ecrivain.png">
-        </div>
-
-        <div class="text-banner col-5 mx-auto align-self-center"  data-aos="" data-aos-duration="1500">
-          <h1>Jean Forteroche</h1>
-          <h2>Acteur et écrivain</h2>
-            <p>
-            C\'est avec joie que je vous accueil aujourd\'hui sur mon site internet, 
-            Celui-ci reprend  mes différentes nouveautés et actualités, vous avez la possibilité de vous créer un compte 
-            très simplement pour intéragir avec mes post.
-            </p>
-        </div>
-
-        <div class="banner col-2">
-          <img src="/images/cinema.png">
-        </div>
-        
-      
-
-        </div>
-      </div>
-              -->
-
 <!-- content-wrap -->
-  <div id="content-wrap" class="container-fluid">
-
-
+  <div id="content-wrap">
     <section id="main">
+
       <div class="row">
         <?php if ($user->hasFlash()) echo '<p class="hasflash">', $user->getFlash(), '</p>'; ?>
 
         <?= $content ?>
-      </div>
-    </section>
 
+      </div>
+
+    </section>
   </div>
 
 
 
 
 
-<!-- Pied de page --> 
+
 <!-- Footer -->
-  <footer class= "page-footer pt-4 mt-5 sticky-bottom">
+<footer class="page-footer font-small stylish-color-dark pt-4 mt-5">
 
-<!-- Footer Text -->
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
 
-<h5 class="text-uppercase font-weight-bold">Contact</h5>
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Contacter Jean Forteroche</h5>
+        <p class="lead">Pour contacter Jean forteroche, plusieurs moyens s'offres à vous et vous pouvez les retrouver sur votre droite.
+        Nous vous invitons également à visiter ses réseaux sociaux !
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Adresse postale</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p class="lead">
+              <i class="fas fa-home mb-3 lead"></i></br>
+              52, rue de Penthièvre, 92800 PUTEAUX
+            </p>
+          </li>
+
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">E-mail</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p class="lead">
+              <i class="fas fa-envelope mb-3 lead"></i></br>
+              contact@jeanforteroche.com
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Téléphone</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p class="lead">
+              <i class="fas fa-phone mb-3 lead"></i></br>
+              01.28.04.43.39 
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
     <!-- Grid row -->
 
-
-
-      <div class="row mt-5">
-
-      
-        <p class="col-12 col-sm-6 col-md-3 lead">
-        <i class="fas fa-home mb-3 lead"></i></br>
-          52, rue de Penthièvre, 92800 PUTEAUX
-        </p>
-
-        <p class="col-12 col-sm-6 col-md-3 lead">
-        <i class="fas fa-envelope mb-3 lead"></i></br>
-          contact@jeanforteroche.com
-        </p>
-
-        <p class="col-12 col-sm-6 col-md-3 lead">
-        <i class="fas fa-phone mb-3 lead"></i></br>
-          01.28.04.43.39 
-        </p>
-
-        <p class="col-12 col-sm-6 col-md-3 lead">
-        <i class="fas fa-print mb-3 lead"></i></br>
-          06.87.25.16.55
-        </p>
-
-      </div>
-
-<!-- Footer Text -->
-<!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="http://www.alexyhajjar.fr/"> AlexyHajjar</a>
   </div>
+  <!-- Footer Links -->
+
+  <!-- Social buttons -->
+  <div class="social-button text-center mt-5 mb-5">
+    <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank"></a>
+    <a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a>
+    <a href="https://www.google.com/" class="fa fa-google" target="_blank"></a>
+    <a href="https://www.youtube.com/" class="fa fa-youtube" target="_blank"></a>
+  </div>
+  <!-- Social buttons -->
+
+   <!-- Call to action -->
+   <ul class="list-unstyled list-inline text-center py-2">
+      <h5 class="mb-1">Espace administrateur</h5>
+      <a href="/admin/connexion" class="btn">Se connecter</a>
+  </ul>
+  <!-- Call to action -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://alexyhajjar.fr/"> alexyhajjar.fr</a>
+  </div>
+  <!-- Copyright -->
 
 </footer>
+<!-- Footer -->
 
-<!-- Script tinyMCE -->
-<?php if ($user->isAuthenticated()) { ?>
-  <script>
-    tinymce.init({
-      selector: 'textarea',
-      height: 500,
-      menubar: 'insert',
-      plugins: [
-        'advlist autolink lists link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table paste code help wordcount',
-        'image'
-      ],
-      toolbar: 'undo redo | formatselect | ' +
-      'bold italic backcolor | alignleft aligncenter ' +
-      'alignright alignjustify | bullist numlist outdent indent | ' +
-      'removeformat | help' +
-      'image',
-      image_list: [
-        {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
-        {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
-      ],
-      content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-    });
-  </script>
-  <?php } ?>
 
     <!-- Boostrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -207,7 +218,44 @@
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script type="text/javascript" src="main.js"></script>
-    
+    <!-- JQUERY -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <!-- Script tinyMCE -->
+  <?php if ($user->isAuthenticated()) { ?>
+    <script>
+      tinymce.init({
+        selector: 'textarea',
+        height: 500,
+        menubar: 'insert',
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount',
+          'image'
+        ],
+        toolbar: 'undo redo | formatselect | ' +
+        'bold italic backcolor | alignleft aligncenter ' +
+        'alignright alignjustify | bullist numlist outdent indent | ' +
+        'removeformat | help' +
+        'image',
+        image_list: [
+          {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
+          {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
+        ],
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+      });
+    </script>
+  <?php } ?>
+
+  <script>
+    // Prevent Bootstrap dialog from blocking focusin
+      $(document).on('focusin', function(e) {
+        if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
+          e.stopImmediatePropagation();
+        }
+      });
+  </script>
+
   </body>
 </html>

@@ -66,11 +66,7 @@ class CommentsManagerPDO extends CommentsManager
   {
     $q = $this->dao->prepare('UPDATE comments SET report IS NOT NULL WHERE id = :id');
  
-    $q->bindValue(':id', $comment->id(), \PDO::PARAM_INT);
- 
     $q->execute();
-
-    $this->app->user()->setFlash('Le commentaire a bien été signalé, merci !');
   }
 
 
