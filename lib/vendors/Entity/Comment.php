@@ -18,11 +18,6 @@ class Comment extends Entity
   {
     return !(empty($this->auteur) || empty($this->contenu));
   }
-
-  public function isReport()
-  {
-    return $this->report;
-  }
  
   public function setNews($news)
   {

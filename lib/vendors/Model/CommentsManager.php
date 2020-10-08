@@ -12,6 +12,13 @@ abstract class CommentsManager extends Manager
    * @return void
    */
   abstract protected function add(Comment $comment);
+
+    /**
+   * Méthode permettant de signaler un commentaire.
+   * @param $id le commentaire à signaler
+   * @return void
+   */
+  abstract protected function reportComment($id);
  
   /**
    * Méthode permettant de supprimer un commentaire.
@@ -19,12 +26,13 @@ abstract class CommentsManager extends Manager
    * @return void
    */
   abstract public function delete($id);
- 
-  /**
-   * Méthode permettant de supprimer tous les commentaires liés à une news
-   * @param $news L'identifiant de la news dont les commentaires doivent être supprimés
+
+    /**
+   * Méthode permettant de supprimer un commentaire.
+   * @param $id L'identifiant du commentaire à report
    * @return void
    */
+
   abstract public function deleteFromNews($news);
  
   /**

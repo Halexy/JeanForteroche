@@ -27,6 +27,12 @@ class CommentsManagerPDO extends CommentsManager
   {
     $this->dao->exec('DELETE FROM comments WHERE news = '.(int) $news);
   }
+
+  public function reportComment($id)
+  {
+    $this->dao->exec('UPDATE FROM comments SET `report` = 1 WHERE id = '.(int) $id);
+
+  }
  
   public function getListOf($news)
   {
@@ -61,15 +67,6 @@ class CommentsManagerPDO extends CommentsManager
  
     $q->execute();
   }
-
-  public function getReportComment(Comment $comment)
-  {
-    $q = $this->dao->prepare('UPDATE comments SET report IS NOT NULL WHERE id = :id');
- 
-    $q->execute();
-  }
-
-
  
   public function get($id)
   {

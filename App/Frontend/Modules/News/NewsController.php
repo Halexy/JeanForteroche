@@ -51,6 +51,18 @@ class NewsController extends BackController
     $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getListOf($news->id()));
   }
  
+  
+  public function executeReportComment(HTTPRequest $request)
+  {
+    $this->managers->getManagerOf('Comments')->get($request->getData('id'));
+ 
+    $this->app->user()->setFlash('Le commentaire a bien été signalé, merci !');
+ 
+    $this->app->httpResponse()->redirect('.');
+
+  }
+ 
+
   public function executeInsertComment(HTTPRequest $request)
   {
     // Si le formulaire a été envoyé.
