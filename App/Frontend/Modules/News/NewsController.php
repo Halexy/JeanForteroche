@@ -54,7 +54,7 @@ class NewsController extends BackController
   
   public function executeReportComment(HTTPRequest $request)
   {
-    $this->managers->getManagerOf('Comments')->get($request->getData('id'));
+    $this->managers->getManagerOf('Comments')->reportComment($request->getData('id'));
  
     $this->app->user()->setFlash('Le commentaire a bien été signalé, merci !');
  

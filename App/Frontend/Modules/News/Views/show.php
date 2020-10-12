@@ -29,12 +29,16 @@
       <legend>
         Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?>
         <?php if ($user->isAuthenticated()) { ?> -
-          <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn" role="button">Modifier</a> |
+          <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn" role="button">Modifier</a> 
           <a href="admin/comment-delete-<?= $comment['id'] ?>.html" class="btn" role="button">Supprimer</a>
         <?php } 
         else { ?>
           <a href="/comment-report-<?= $comment['id'] ?>.html" class="btn" role="button">Signaler</a> 
-          <?php } ?>
+          <?php } 
+
+        var_dump($comment['report'])   ?>
+          <p>Le commentaire à déja été signalé</p>
+          <?php    ?>
         
       </legend>
       <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>

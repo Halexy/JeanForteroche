@@ -222,31 +222,49 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
   <!-- Script tinyMCE -->
-  <?php if ($user->isAuthenticated()) { ?>
-    <script>
-      tinymce.init({
-        selector: 'textarea',
-        height: 500,
-        menubar: 'insert',
-        plugins: [
-          'advlist autolink lists link image charmap print preview anchor',
-          'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste code help wordcount',
-          'image'
-        ],
-        toolbar: 'undo redo | formatselect | ' +
-        'bold italic backcolor | alignleft aligncenter ' +
-        'alignright alignjustify | bullist numlist outdent indent | ' +
-        'removeformat | help' +
-        'image',
-        image_list: [
-          {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
-          {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
-        ],
-        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-      });
-    </script>
-  <?php } ?>
+<script>
+  tinymce.init({
+    selector: 'Textarea',
+    plugins: 'image code',
+    toolbar: 'undo redo | image code',
+    convert_urls: false,
+    
+    // without images_upload_url set, Upload tab won't show up
+    images_upload_url: '/jeanforteroche/Upload.php',
+    
+    // override default upload handler to simulate successful upload
+    images_upload_handler: function (blobInfo, success, failure) {
+        var xhr, formData;
+      
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', '/jeanforteroche/Upload.php');
+      
+        xhr.onload = function() {
+            var json;
+        
+            if (xhr.status != 200) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+        
+            json = JSON.parse(xhr.responseText);
+        
+            if (!json || typeof json.location != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+        
+            success(json.location);
+        };
+      
+        formData = new FormData();
+        formData.append('file', blobInfo.blob(), blobInfo.filename());
+      
+        xhr.send(formData);
+    },
+});
+</script>
 
   <script>
     // Prevent Bootstrap dialog from blocking focusin
