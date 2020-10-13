@@ -18,7 +18,7 @@ abstract class CommentsManager extends Manager
    * @param $id L'identifiant du commentaire à signaler
    * @return void
    */
-  abstract protected function reportComment($id);
+  abstract protected function reportComment($comment);
  
   /**
    * Méthode permettant de supprimer un commentaire.

@@ -28,7 +28,7 @@ class CommentsManagerPDO extends CommentsManager
     $this->dao->exec('DELETE FROM comments WHERE news = '.(int) $news);
   }
 
-  public function reportComment($comment)
+  public function reportComment($id)
   {
     $q = $this->dao->prepare('UPDATE comments SET report = :report WHERE id = :id');
 

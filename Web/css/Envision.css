@@ -195,26 +195,26 @@ footer h5
 
 
 /* BANNER */
-.banner
+#banner
 {
   padding-top: 50px;
   text-align: center;
 }
 
-.banner img
+#banner img
 {
   max-width: 250px;
   margin: 25px auto;
   border-radius: 10px;
 }
 
-.banner p 
+#banner p 
 {
   width: 50%;
   margin: auto;
 }
 
-.banner .btn
+#banner .btn
 {
   margin-top: 25px;
 }
@@ -587,7 +587,7 @@ footer h5
 
   /* COMMENTS */
 
-.comment
+.article
 {
   width: 90%;
   margin: auto;
@@ -600,14 +600,14 @@ footer h5
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
 }
 
-.espace_commentaire
+.zone_comment
 {
   margin-top: 50px !important;
   border-top: 1px solid var(--black-color);
   width: 80%;
 }
 
-.commentaires
+.comment
 {
   margin: 50px 0;
   border: 1px solid var(--title-color);

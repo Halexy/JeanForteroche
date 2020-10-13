@@ -20,62 +20,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <!-- tinyMCE 5 -->
     <script src="https://cdn.tiny.cloud/1/5m2oyqax9487r7v3ga1m2tpsa3x1zwdx92jsbw1zwtrukd8s/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-    <link rel="stylesheet" href="/css/Envision.css">
+    <link rel="stylesheet" href="/css/style.css">
   </header>
  
   <body>
     <div id="wrap">
     
-      <header>
-        <nav class="navbar navbar-expand-md sticky-top navbar-light" style="background-color: rgba(35, 89, 82, 0.8);">
-          
-          <a class="navbar-brand" href="http://jeanforteroche/">
-            <img src="/images/logo.PNG" width="60" height="60" class="d-inline-block" alt="logo">
-          </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-black">
+  <a class="navbar-brand" href="http://jeanforteroche/">
+    <img src="/images/logo.PNG" width="60" height="60" class="d-inline-block" alt="logo" >
+  </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse  text-center" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://jeanforteroche/">Acceuil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://jeanforteroche/#news">Billet simple pour l'alaska</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://jeanforteroche/#footer">Contact</a>
+      </li>
+    </ul>
 
-              <li class="nav-item active">
-                <a class="nav-link" href="http://jeanforteroche/">Acceuil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="http://jeanforteroche/#news">Billet simple pour l'alaska</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="http://jeanforteroche/#footer">Contact</a>
-              </li>
-            </ul>
+    <?php if ($user->isAuthenticated()) { ?>
+      <div class="pull-right">
+        <a class="btn" href="/admin/" role="button">Admin</a>
+        <a class="btn" href="/admin/news-insert.html" role="button">Ajouter une news</a>
+        <a class="btn btn-danger " href="/admin/logout" role="button">Déconnexion</a>
+      </div>
+    <?php } ?>
 
-            <?php if ($user->isAuthenticated()) { ?>
-              <div class="pull-right">
-              <a class="btn" href="/admin/" role="button">Admin</a>
-              <a class="btn" href="/admin/news-insert.html" role="button">Ajouter une news</a>
-              <a class="btn btn-danger " href="/admin/logout" role="button">Déconnexion</a>
-              </div>
-            <?php } ?>
-
-            <?php if ($user->isAuthenticated() == false) { ?>
-              <div class="pull-right">
-              <a class="btn" href="/admin/connexion" role="button">Connexion</a>
-              </div>
-            <?php } ?>
-
-          </div>
-
-        </nav>
-      </header>
-    </div>
+    <?php if ($user->isAuthenticated() == false) { ?>
+      <div class="pull-right">
+        <a class="btn" href="/admin/connexion" role="button">Connexion</a>
+      </div>
+    <?php } ?>
+    
+    </ul>
+  </div>
+</nav>
 
 <!-- content-wrap -->
   <div id="content-wrap">
@@ -92,12 +84,8 @@
   </div>
 
 
-
-
-
-
 <!-- Footer -->
-<footer class="page-footer font-small stylish-color-dark pt-4 mt-5">
+<footer class="page-footer stylish-color-dark pt-4 mt-5" id="footer">
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left">
@@ -106,7 +94,7 @@
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-md-4 mx-auto">
+      <div class="col-lg-4 col-8 mx-auto">
 
         <!-- Content -->
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Contacter Jean Forteroche</h5>
@@ -117,10 +105,9 @@
       </div>
       <!-- Grid column -->
 
-      <hr class="clearfix w-100 d-md-none">
 
       <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
+      <div class="col-lg-2 mx-auto">
 
         <!-- Links -->
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Adresse postale</h5>
@@ -138,10 +125,9 @@
       </div>
       <!-- Grid column -->
 
-      <hr class="clearfix w-100 d-md-none">
 
       <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
+      <div class="col-lg-3 mx-auto">
 
         <!-- Links -->
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">E-mail</h5>
@@ -158,10 +144,9 @@
       </div>
       <!-- Grid column -->
 
-      <hr class="clearfix w-100 d-md-none">
 
       <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
+      <div class="col-lg-3 mx-auto">
 
         <!-- Links -->
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Téléphone</h5>
@@ -185,11 +170,11 @@
   <!-- Footer Links -->
 
   <!-- Social buttons -->
-  <div class="social-button text-center mt-5 mb-5">
-    <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank"></a>
-    <a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a>
-    <a href="https://www.google.com/" class="fa fa-google" target="_blank"></a>
-    <a href="https://www.youtube.com/" class="fa fa-youtube" target="_blank"></a>
+  <div class="social-button text-center mb-5">
+    <a href="https://www.facebook.com/" class="fa fa-facebook mt-3" target="_blank"></a>
+    <a href="https://twitter.com/" class="fa fa-twitter mt-3" target="_blank"></a>
+    <a href="https://www.google.com/" class="fa fa-google mt-3" target="_blank"></a>
+    <a href="https://www.youtube.com/" class="fa fa-youtube mt-3" target="_blank"></a>
   </div>
   <!-- Social buttons -->
 
@@ -215,56 +200,56 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- JQUERY -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
   <!-- Script tinyMCE -->
+<?php if ($user->isAuthenticated()) { ?>
+
 <script>
   tinymce.init({
-    selector: 'Textarea',
-    plugins: 'image code',
-    toolbar: 'undo redo | image code',
-    convert_urls: false,
-    
-    // without images_upload_url set, Upload tab won't show up
-    images_upload_url: '/jeanforteroche/Upload.php',
-    
-    // override default upload handler to simulate successful upload
-    images_upload_handler: function (blobInfo, success, failure) {
-        var xhr, formData;
-      
-        xhr = new XMLHttpRequest();
-        xhr.withCredentials = false;
-        xhr.open('POST', '/jeanforteroche/Upload.php');
-      
-        xhr.onload = function() {
-            var json;
-        
-            if (xhr.status != 200) {
-                failure('HTTP Error: ' + xhr.status);
-                return;
-            }
-        
-            json = JSON.parse(xhr.responseText);
-        
-            if (!json || typeof json.location != 'string') {
-                failure('Invalid JSON: ' + xhr.responseText);
-                return;
-            }
-        
-            success(json.location);
-        };
-      
-        formData = new FormData();
-        formData.append('file', blobInfo.blob(), blobInfo.filename());
-      
-        xhr.send(formData);
-    },
+  selector: 'textarea',
+  plugins: 'image code',
+  toolbar: 'undo redo | link image | code',
+  /* enable title field in the Image dialog*/
+  image_title: true,
+  /* enable automatic uploads of images represented by blob or data URIs*/
+  automatic_uploads: true,
+
+  file_picker_types: 'image',
+  /* and here's our custom image picker*/
+  file_picker_callback: function (cb, value, meta) {
+    var input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+
+    input.onchange = function () {
+      var file = this.files[0];
+
+      var reader = new FileReader();
+      reader.onload = function () {
+        /*
+          Note: Now we need to register the blob in TinyMCEs image blob
+          registry. In the next release this part hopefully won't be
+          necessary, as we are looking to handle it internally.
+        */
+        var id = 'blobid' + (new Date()).getTime();
+        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+        var base64 = reader.result.split(',')[1];
+        var blobInfo = blobCache.create(id, file, base64);
+        blobCache.add(blobInfo);
+
+        /* call the callback and populate the Title field with the file name */
+        cb(blobInfo.blobUri(), { title: file.name });
+      };
+      reader.readAsDataURL(file);
+    };
+
+    input.click();
+  },
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
 });
 </script>
+<?php } ?>
 
   <script>
     // Prevent Bootstrap dialog from blocking focusin

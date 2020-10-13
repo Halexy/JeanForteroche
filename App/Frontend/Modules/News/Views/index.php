@@ -1,4 +1,4 @@
-<div class="banner">
+<div id="banner" class="fadeInDown">
         <img src="images/photo_jean.jpg" alt="photo de profil" class="profil-picture img-thumbnail col-12">
         <h2 class="col-12 text-center">Bienvenue sur le site de Jean Forteroche</h2>
         <p class="text-center">
@@ -19,23 +19,23 @@
       <a href="#news"class="btn">Découvrir</a>
 </div>
 
-<div class="border"></div>
 
-<H2 class="col-12 text-center" id="news">Billet simple pour l'alaska</H2>
-<p class="col-12 text-center">J'ai l'honneur de vous présenter les épisodes tant attendus du tout nouveau roman de Jean Forteroche : </br>
-  <strong>Billet simple pour l'alaska !</strong> </br>
-  Chaque semaine sera publié un épisode et ce pour 10 épisodes !
-</p>
-<?php
-foreach ($listeNews as $news)
-{
-?>
-<div class="card text-center">
-  <div class="card-body">
-    <h2 class="card-title text-uppercase"><?= $news['titre'] ?></h2>
-    <p class="card-text"><?= nl2br($news['contenu']) ?></p>
-    <a href="news-<?= $news['id'] ?>.html" class="btn" role="button">Lire plus</a>
-  </div>
-</div>
-<?php
-}
+  <div class="border"></div>
+    <H2 class="col-12 text-center" id="news">Billet simple pour l'alaska</H2>
+    <p class="col-12 text-center">J'ai l'honneur de vous présenter les épisodes tant attendus du tout nouveau roman de Jean Forteroche : </br>
+      <strong>Billet simple pour l'alaska !</strong> </br>
+      Chaque semaine sera publié un épisode et ce pour 10 épisodes !
+    </p>
+  <?php
+  foreach ($listeNews as $news)
+  {
+  ?>
+    <div class="card text-center">
+      <div class="card-body">
+        <h2 class="card-title text-uppercase"><?= $news['titre'] ?></h2>
+        <p class="card-text"><?= nl2br($news['contenu']) ?></p>
+        <a href="news-<?= $news['id'] ?>.html" class="btn" role="button">Lire plus</a>
+      </div>
+    </div>
+  <?php
+  } 
