@@ -8,7 +8,7 @@
     <p style="text-align: right;"><small><em>Modifiée le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
   <?php } ?>
 
-  <div class="zone_comment text-center mx-auto">
+  <div class="zone_comment text-center mx-auto" id="zone_comment">
     <h3 style="text-align: center; padding-top: 25px; ">ESPACE COMMENTAIRES</h3>
  
     <?php
@@ -26,19 +26,25 @@
 
     <fieldset>
     <div class="comment">
+
       <legend>
+
         Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?>
         <?php if ($user->isAuthenticated()) { ?> 
           <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn" role="button">Modifier</a> 
           <a href="admin/comment-delete-<?= $comment['id'] ?>.html" class="btn" role="button">Supprimer</a>
-        <?php } 
-        else { ?>
-        <?php if (($comment['report']) == 0) { ?>
-          <a href="/comment-report-<?= $comment['id'] ?>.html" class="btn" role="button">Signaler</a> 
+
+          <?php } if ($user->isAuthenticated() && $comment['report'] == 1) { ?>
+            <div class="alert alert-danger">
+              <p style="margin:0;"><i class="fas fa-exclamation-triangle"></i> Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
+            </div>
+
           <?php } ?>
         
       </legend>
+
       <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
+
       </div>
     </fieldset>
     <?php

@@ -30,8 +30,8 @@
     <div id="wrap">
     
     <nav class="navbar navbar-expand-lg navbar-light bg-black">
-  <a class="navbar-brand" href="http://jeanforteroche/">
-    <img src="/images/logo.PNG" width="60" height="60" class="d-inline-block" alt="logo" >
+  <a class="navbar-brand" href="/">
+    <img src="/images/logo.png" width="60" height="60" class="d-inline-block" alt="logo" >
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,13 +41,13 @@
   <div class="collapse navbar-collapse  text-center" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="http://jeanforteroche/">Acceuil</a>
+        <a class="nav-link" href="/">Acceuil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://jeanforteroche/#news">Billet simple pour l'alaska</a>
+        <a class="nav-link" href="#news">Billet simple pour l'alaska</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://jeanforteroche/#footer">Contact</a>
+        <a class="nav-link" href="#footer">Contact</a>
       </li>
     </ul>
 
@@ -177,12 +177,14 @@
     <a href="https://www.youtube.com/" class="fa fa-youtube mt-3" target="_blank"></a>
   </div>
   <!-- Social buttons -->
-
-   <!-- Call to action -->
-   <ul class="list-unstyled list-inline text-center py-2">
-      <h5 class="mb-1">Espace administrateur</h5>
-      <a href="/admin/connexion" class="btn">Se connecter</a>
+  <?php if ($user->isAuthenticated() == false) { ?>
+  <ul class="list-unstyled list-inline text-center py-2">
+    <h5 class="mb-1">Espace administrateur</h5>
+    <a href="/admin/connexion" class="btn">Se connecter</a>
   </ul>
+    <?php } ?>
+   <!-- Call to action -->
+
   <!-- Call to action -->
 
   <!-- Copyright -->

@@ -4,7 +4,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="/images/padlock-icon.PNG" class="icon img-fluid" alt="User Icon" />
+      <img src="/images/padlock-icon.png" class="icon img-fluid" alt="User Icon" />
     </div>
 
     <!-- Login Form -->

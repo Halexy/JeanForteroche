@@ -1,5 +1,5 @@
 <div id="banner" class="fadeInDown">
-        <img src="images/photo_jean.jpg" alt="photo de profil" class="profil-picture img-thumbnail col-12">
+        <img src="/images/photo_jean.jpg" alt="photo de profil" class="profil-picture img-thumbnail col-12">
         <h2 class="col-12 text-center">Bienvenue sur le site de Jean Forteroche</h2>
         <p class="text-center">
           Nous sommes ravis de vous accueillir sur le site officiel de l'acteur et auteur JEAN FORTEROCHE.

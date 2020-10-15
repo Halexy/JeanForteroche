@@ -4,7 +4,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="/images/update-icon.PNG" class="icon" alt="User Icon" />
+      <img src="Web/images/update-icon.PNG" class="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
