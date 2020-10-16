@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
-  <header>
+<html lang="fr">
+  <head>
     <title>
       <?= isset($title) ? $title : 'Jean Forteroche' ?>
     </title>
  
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -24,57 +24,62 @@
     <script src="https://cdn.tiny.cloud/1/5m2oyqax9487r7v3ga1m2tpsa3x1zwdx92jsbw1zwtrukd8s/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <link rel="stylesheet" href="/css/style.css">
-  </header>
+  </head>
  
   <body>
     <div id="wrap">
     
     <nav class="navbar navbar-expand-lg navbar-light bg-black">
-  <a class="navbar-brand" href="/">
-    <img src="/images/logo.png" width="60" height="60" class="d-inline-block" alt="logo" >
-  </a>
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo.png" width="60" height="60" class="d-inline-block" alt="logo" >
+      </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="collapse navbar-collapse  text-center" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Acceuil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#news">Billet simple pour l'alaska</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#footer">Contact</a>
-      </li>
-    </ul>
+      <div class="collapse navbar-collapse  text-center" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Acceuil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#news">Billet simple pour l'alaska</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#footer">Contact</a>
+          </li>
+        </ul>
 
-    <?php if ($user->isAuthenticated()) { ?>
-      <div class="pull-right">
-        <a class="btn" href="/admin/" role="button">Admin</a>
-        <a class="btn" href="/admin/news-insert.html" role="button">Ajouter une news</a>
-        <a class="btn btn-danger " href="/admin/logout" role="button">Déconnexion</a>
+        <?php if ($user->isAuthenticated()) { ?>
+          <div class="pull-right">
+            <a class="bt" href="/admin/" role="button">Admin</a>
+            <a class="bt" href="/admin/news-insert.html" role="button">Ajouter une news</a>
+            <a class="bt btn-danger " href="/admin/logout" role="button">Déconnexion</a>
+          </div>
+        <?php } ?>
+
+        <?php if ($user->isAuthenticated() == false) { ?>
+          <div class="pull-right">
+            <a class="bt" href="/admin/connexion" role="button">Connexion</a>
+          </div>
+        <?php } ?>
+        
       </div>
-    <?php } ?>
-
-    <?php if ($user->isAuthenticated() == false) { ?>
-      <div class="pull-right">
-        <a class="btn" href="/admin/connexion" role="button">Connexion</a>
-      </div>
-    <?php } ?>
-    
-    </ul>
+    </nav>
   </div>
-</nav>
 
 <!-- content-wrap -->
   <div id="content-wrap">
     <section id="main">
 
       <div class="row">
-        <?php if ($user->hasFlash()) echo '<p class="hasflash">', $user->getFlash(), '</p>'; ?>
+        <?php if ($user->hasFlash()) echo ' 
+        <div class="alert alert-info alert-dismissible mx-auto fadeInDown">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <p>', $user->getFlash(), '</p></div>'; ?>
+        
+        
 
         <?= $content ?>
 
@@ -115,7 +120,7 @@
         <ul class="list-unstyled">
           <li>
             <p class="lead">
-              <i class="fas fa-home mb-3 lead"></i></br>
+              <i class="fas fa-home mb-3 lead"></i><br>
               52, rue de Penthièvre, 92800 PUTEAUX
             </p>
           </li>
@@ -135,7 +140,7 @@
         <ul class="list-unstyled">
           <li>
             <p class="lead">
-              <i class="fas fa-envelope mb-3 lead"></i></br>
+              <i class="fas fa-envelope mb-3 lead"></i><br>
               contact@jeanforteroche.com
             </p>
           </li>
@@ -154,7 +159,7 @@
         <ul class="list-unstyled">
           <li>
             <p class="lead">
-              <i class="fas fa-phone mb-3 lead"></i></br>
+              <i class="fas fa-phone mb-3 lead"></i><br>
               01.28.04.43.39 
             </p>
           </li>
@@ -178,19 +183,18 @@
   </div>
   <!-- Social buttons -->
   <?php if ($user->isAuthenticated() == false) { ?>
-  <ul class="list-unstyled list-inline text-center py-2">
+  <div class="text-center py-2">
     <h5 class="mb-1">Espace administrateur</h5>
-    <a href="/admin/connexion" class="btn">Se connecter</a>
-  </ul>
+    <a href="/admin/connexion" class="bt">Se connecter</a>
+  </div>
     <?php } ?>
    <!-- Call to action -->
 
   <!-- Call to action -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://alexyhajjar.fr/"> alexyhajjar.fr</a>
-  </div>
+  <div class="footer-copyright text-center py-3"><p>© 2020 Copyright:<a href="https://alexyhajjar.fr/"> alexyhajjar.fr</a></p></div>
+  
   <!-- Copyright -->
 
 </footer>

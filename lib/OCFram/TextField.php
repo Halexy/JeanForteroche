@@ -12,7 +12,7 @@ class TextField extends Field
  
     if (!empty($this->errorMessage))
     {
-      $widget .= '<p class="errormsg">'. $this->errorMessage. '</p> <br />';
+      $widget .= '<p class="alert alert-danger fade in">'. $this->errorMessage. '</p> <br />';
     }
 
  

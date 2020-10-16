@@ -29,18 +29,31 @@
 
       <legend>
 
-        Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?>
-        <?php if ($user->isAuthenticated()) { ?> 
-          <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn" role="button">Modifier</a> 
-          <a href="admin/comment-delete-<?= $comment['id'] ?>.html" class="btn" role="button">Supprimer</a>
+        Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?><br>
+        <?php 
+          if ($user->isAuthenticated()) { ?> 
+            <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn btn-warning" role="button">Modifier</a> 
+            <a href="admin/comment-delete-<?= $comment['id'] ?>.html" class="btn btn-danger" role="button">Supprimer</a>
+          <?php }
 
-          <?php } if ($user->isAuthenticated() && $comment['report'] == 1) { ?>
+          elseif ($user->isAuthenticated() && $comment['report'] == 1) { ?>
             <div class="alert alert-danger">
               <p style="margin:0;"><i class="fas fa-exclamation-triangle"></i> Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
             </div>
+          <?php } 
 
+          elseif ($user->isAuthenticated() == false && $comment['report'] == 1) { ?>
+            <div class="alert alert-info">
+              <p style="margin:0; font-size: 1vw">Le commentaire a déjà signalé et il sera modéré dans les plus brefs délais !</p>
+            </div>
+          <?php } 
+          
+          elseif ($user->isAuthenticated() == false && $comment['report'] == 0) { ?>
+            <a href="/comment-report-<?= $comment['id'] ?>.html" class="bt" role="button">Signaler</a>
           <?php } ?>
-        
+
+
+
       </legend>
 
       <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
@@ -51,8 +64,14 @@
     }
     ?>
 
+    <?php if ($user->isAuthenticated() == false) { ?>
 
-  <p><a href="commenter-<?= $news['id'] ?>.html" class="btn" role="button">Ajouter un commentaire</a></p>
+      <p><a href="commenter-<?= $news['id'] ?>.html" class="bt" role="button">Ajouter un commentaire</a></p>
+
+    <?php } ?>
+
+
+  
 
   </div>
 </div>

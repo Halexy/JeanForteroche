@@ -40,6 +40,13 @@ class NewsController extends BackController
  
     $this->page->addVar('listeNews', $manager->getList());
     $this->page->addVar('nombreNews', $manager->count());
+
+    $manager = $this->managers->getManagerOf('Comments');
+    
+    $this->page->addVar('commentReport', $manager->countReport());
+    
+
+
   }
  
   public function executeInsert(HTTPRequest $request)
@@ -65,7 +72,8 @@ class NewsController extends BackController
       $comment = new Comment([
         'id' => $request->getData('id'),
         'auteur' => $request->postData('auteur'),
-        'contenu' => $request->postData('contenu')
+        'contenu' => $request->postData('contenu'),
+        'report' => $request->postData('report')
       ]);
     }
     else

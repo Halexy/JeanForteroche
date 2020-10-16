@@ -57,7 +57,7 @@ class NewsController extends BackController
     
     $this->managers->getManagerOf('Comments')->reportComment($request->getData('id'));
  
-    $this->app->user()->setFlash('Le commentaire a bien été signalé, merci !' . $request->getData('id'));
+    $this->app->user()->setFlash('Le commentaire a bien été signalé, merci !');
  
     $this->app->httpResponse()->redirect('.');
 

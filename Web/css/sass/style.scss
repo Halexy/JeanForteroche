@@ -60,7 +60,7 @@ p
 
 /* BUTTON */
   
-input[type=button], input[type=submit], input[type=reset], .btn  {
+input[type=button], input[type=submit], input[type=reset], .bt  {
   background-color: var(--title-color);
   border: none;
   color: var(--icon-color);
@@ -82,12 +82,12 @@ input[type=button], input[type=submit], input[type=reset], .btn  {
   transition: all 0.3s ease-in-out;
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, .btn:hover  {
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, .bt:hover  {
   background-color: var(--icon-color);
   color: var(--title-color) !important;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active, .btn:active  {
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active, .bt:active  {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -228,11 +228,10 @@ footer
   
   p 
   {
-    width: 50%;
     margin: auto;
   }
   
-  .btn
+  .bt
   {
     margin-top: 25px;
   }
@@ -272,7 +271,7 @@ footer
     max-height: 250px;
     }
 
-    .btn
+    .bt
     {
     margin: 10px auto;
     padding: 10px 30px;
