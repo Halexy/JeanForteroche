@@ -28,7 +28,8 @@
  
   <body>
     <div id="wrap">
-    
+
+  <!-- Navbar -->  
     <nav class="navbar navbar-expand-lg navbar-light bg-black">
       <a class="navbar-brand" href="/">
         <img src="/images/logo.png" width="60" height="60" class="d-inline-block" alt="logo" >
@@ -41,7 +42,7 @@
       <div class="collapse navbar-collapse  text-center" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Acceuil</a>
+            <a class="nav-link" href="/">Accueil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/#news">Billet simple pour l'alaska</a>
@@ -54,7 +55,7 @@
         <?php if ($user->isAuthenticated()) { ?>
           <div class="pull-right">
             <a class="bt" href="/admin/" role="button">Admin</a>
-            <a class="bt" href="/admin/news-insert.html" role="button">Ajouter une news</a>
+            <a class="bt" href="/admin/news-insert.html" role="button">Ajouter un billet</a>
             <a class="bt btn-danger " href="/admin/logout" role="button">Déconnexion</a>
           </div>
         <?php } ?>
@@ -69,17 +70,18 @@
     </nav>
   </div>
 
-<!-- content-wrap -->
+<!-- Content-wrap -->
   <div id="content-wrap">
     <section id="main">
 
       <div class="row">
+
         <?php if ($user->hasFlash()) echo ' 
-        <div class="alert alert-info alert-dismissible mx-auto fadeInDown">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <p>', $user->getFlash(), '</p></div>'; ?>
-        
-        
+          <div class="alert alert-info alert-dismissible mx-auto text-center fadeInDown">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <p>', $user->getFlash(), '</p>
+          </div>'; 
+        ?>
 
         <?= $content ?>
 
@@ -92,29 +94,18 @@
 <!-- Footer -->
 <footer class="page-footer stylish-color-dark pt-4 mt-5" id="footer">
 
-  <!-- Footer Links -->
   <div class="container text-center text-md-left">
-
-    <!-- Grid row -->
     <div class="row">
 
-      <!-- Grid column -->
-      <div class="col-lg-4 col-8 mx-auto">
 
-        <!-- Content -->
+      <div class="col-lg-4 col-10 mx-auto">
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Contacter Jean Forteroche</h5>
-        <p class="lead">Pour contacter Jean forteroche, plusieurs moyens s'offres à vous et vous pouvez les retrouver sur votre droite.
+        <p class="lead">Pour contacter Jean forteroche, plusieurs moyens s'offrent à vous et vous pouvez les retrouver sur votre droite.
         Nous vous invitons également à visiter ses réseaux sociaux !
         </p>
-
       </div>
-      <!-- Grid column -->
 
-
-      <!-- Grid column -->
-      <div class="col-lg-2 mx-auto">
-
-        <!-- Links -->
+      <div class="col-lg-3 mx-auto">
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Adresse postale</h5>
 
         <ul class="list-unstyled">
@@ -124,17 +115,11 @@
               52, rue de Penthièvre, 92800 PUTEAUX
             </p>
           </li>
-
         </ul>
 
       </div>
-      <!-- Grid column -->
 
-
-      <!-- Grid column -->
       <div class="col-lg-3 mx-auto">
-
-        <!-- Links -->
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">E-mail</h5>
 
         <ul class="list-unstyled">
@@ -147,13 +132,8 @@
         </ul>
 
       </div>
-      <!-- Grid column -->
-
-
-      <!-- Grid column -->
-      <div class="col-lg-3 mx-auto">
-
-        <!-- Links -->
+      
+      <div class="col-lg-2 mx-auto">
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Téléphone</h5>
 
         <ul class="list-unstyled">
@@ -166,95 +146,84 @@
         </ul>
 
       </div>
-      <!-- Grid column -->
 
     </div>
-    <!-- Grid row -->
-
   </div>
-  <!-- Footer Links -->
 
   <!-- Social buttons -->
-  <div class="social-button text-center mb-5">
+  <div class="social-button text-center mb-5 ">
     <a href="https://www.facebook.com/" class="fa fa-facebook mt-3" target="_blank"></a>
     <a href="https://twitter.com/" class="fa fa-twitter mt-3" target="_blank"></a>
     <a href="https://www.google.com/" class="fa fa-google mt-3" target="_blank"></a>
     <a href="https://www.youtube.com/" class="fa fa-youtube mt-3" target="_blank"></a>
   </div>
-  <!-- Social buttons -->
-  <?php if ($user->isAuthenticated() == false) { ?>
-  <div class="text-center py-2">
-    <h5 class="mb-1">Espace administrateur</h5>
-    <a href="/admin/connexion" class="bt">Se connecter</a>
-  </div>
-    <?php } ?>
-   <!-- Call to action -->
 
-  <!-- Call to action -->
+  <!-- Admin connection -->
+  <?php if ($user->isAuthenticated() == false) { ?>
+    <div class="text-center py-2">
+      <h5 class="mb-1">Espace administrateur</h5>
+      <a href="/admin/connexion" class="bt">Se connecter</a>
+    </div>
+  <?php } ?>
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3"><p>© 2020 Copyright:<a href="https://alexyhajjar.fr/"> alexyhajjar.fr</a></p></div>
   
-  <!-- Copyright -->
-
 </footer>
-<!-- Footer -->
 
 
-    <!-- Boostrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- SCRIPT -->
+
+  <!-- Boostrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 
 
-  <!-- Script tinyMCE -->
-<?php if ($user->isAuthenticated()) { ?>
+  <!-- tinyMCE -->
+  <?php if ($user->isAuthenticated()) { ?>
 
-<script>
-  tinymce.init({
-  selector: 'textarea',
-  plugins: 'image code',
-  toolbar: 'undo redo | link image | code',
-  /* enable title field in the Image dialog*/
-  image_title: true,
-  /* enable automatic uploads of images represented by blob or data URIs*/
-  automatic_uploads: true,
+  <script>
+    tinymce.init({
+    selector: 'textarea',
+    plugins: 'image code',
+    toolbar: 'undo redo | link image | code',
+    // enable title field in the Image dialog
+    image_title: true,
+    // enable automatic uploads of images represented by blob or data URIs
+    automatic_uploads: true,
 
-  file_picker_types: 'image',
-  /* and here's our custom image picker*/
-  file_picker_callback: function (cb, value, meta) {
-    var input = document.createElement('input');
-    input.setAttribute('type', 'file');
-    input.setAttribute('accept', 'image/*');
+    file_picker_types: 'image',
+    // and here's our custom image picker 
+    file_picker_callback: function (cb, value, meta) {
+      var input = document.createElement('input');
+      input.setAttribute('type', 'file');
+      input.setAttribute('accept', 'image/*');
 
-    input.onchange = function () {
-      var file = this.files[0];
+      input.onchange = function () {
+        var file = this.files[0];
 
-      var reader = new FileReader();
-      reader.onload = function () {
-        /*
-          Note: Now we need to register the blob in TinyMCEs image blob
-          registry. In the next release this part hopefully won't be
-          necessary, as we are looking to handle it internally.
-        */
-        var id = 'blobid' + (new Date()).getTime();
-        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
-        var base64 = reader.result.split(',')[1];
-        var blobInfo = blobCache.create(id, file, base64);
-        blobCache.add(blobInfo);
+        var reader = new FileReader();
+        reader.onload = function () {
+          // register the blob in TinyMCEs image blob registry.
+          var id = 'blobid' + (new Date()).getTime();
+          var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+          var base64 = reader.result.split(',')[1];
+          var blobInfo = blobCache.create(id, file, base64);
+          blobCache.add(blobInfo);
 
-        /* call the callback and populate the Title field with the file name */
-        cb(blobInfo.blobUri(), { title: file.name });
+          // call the callback and populate the Title field with the file name 
+          cb(blobInfo.blobUri(), { title: file.name });
+        };
+        reader.readAsDataURL(file);
       };
-      reader.readAsDataURL(file);
-    };
 
-    input.click();
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-});
-</script>
+      input.click();
+    },
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+  });
+  </script>
 <?php } ?>
 
   <script>

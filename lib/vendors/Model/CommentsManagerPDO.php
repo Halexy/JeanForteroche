@@ -7,12 +7,12 @@ class CommentsManagerPDO extends CommentsManager
 {
   protected function add(Comment $comment)
   {
-    $q = $this->dao->prepare('INSERT INTO comments SET news = :news, auteur = :auteur, contenu = :contenu, date = NOW(), report = :report');
+    $q = $this->dao->prepare('INSERT INTO comments SET news = :news, auteur = :auteur, contenu = :contenu, report = :report, date = NOW()');
  
     $q->bindValue(':news', $comment->news(), \PDO::PARAM_INT);
     $q->bindValue(':auteur', $comment->auteur());
     $q->bindValue(':contenu', $comment->contenu());
-    $q->bindValue(':report', 1);
+    $q->bindValue(':report', 0);
  
     $q->execute();
  
@@ -21,12 +21,19 @@ class CommentsManagerPDO extends CommentsManager
  
   public function delete($id)
   {
-    $this->dao->exec('DELETE FROM comments WHERE id = '.(int) $id);
+    $q = $this->dao->prepare('DELETE FROM comments WHERE id = :id');
+
+    $q->bindValue(':id', (int) $id);
+    $q->execute();
+    
   }
  
   public function deleteFromNews($news)
   {
-    $this->dao->exec('DELETE FROM comments WHERE news = '.(int) $news);
+    $q = $this->dao->prepare('DELETE FROM comments WHERE news = :news');
+
+    $q->bindValue(':news', (int) $news);
+    $q->execute();
   }
 
   public function reportComment($id)

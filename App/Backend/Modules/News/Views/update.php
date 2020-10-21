@@ -4,11 +4,11 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="Web/images/update-icon.PNG" class="icon" alt="User Icon" />
+      <img src="/images/update-icon.png" class="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
-    <h2>Modifier une news</h2>
+    <h2>Modifier un billet</h2>
       <form action="" method="post">
         <p>
           <?= $form ?>

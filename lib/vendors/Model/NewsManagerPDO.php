@@ -18,22 +18,26 @@ class NewsManagerPDO extends NewsManager
  
   public function count()
   {
-    return $this->dao->query('SELECT COUNT(*) FROM news')->fetchColumn();
+    $count = $this->dao->prepare('SELECT COUNT(*) FROM news');
+
+    $count->execute();
+
+    return $count->fetchcolumn();
   }
  
   public function delete($id)
   {
-    $this->dao->exec('DELETE FROM news WHERE id = '.(int) $id);
+    $q = $this->dao->prepare('DELETE FROM news WHERE id = :id');
+ 
+    $q->bindValue(':id', (int) $id);
+ 
+    $q->execute();
+    
   }
  
-  public function getList($debut = -1, $limite = -1)
+  public function getList()
   {
-    $sql = 'SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news ORDER BY id DESC';
- 
-    if ($debut != -1 || $limite != -1)
-    {
-      $sql .= ' LIMIT '.(int) $limite.' OFFSET '.(int) $debut;
-    }
+    $sql = 'SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news ORDER BY id';
  
     $requete = $this->dao->query($sql);
     $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\News');

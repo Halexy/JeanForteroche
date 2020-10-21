@@ -1,21 +1,21 @@
 <div class= "container article">
 
   <p>Par <em><?= $news['auteur'] ?></em>, le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
-  <h2 style="text-align: center;"><?= $news['titre'] ?></h2>
-  <p style="text-align: center;"><?= nl2br($news['contenu']) ?></p>
+  <h2 class="text-center"><?= $news['titre'] ?></h2>
+  <p class="text-center"><?= nl2br($news['contenu']) ?></p>
  
   <?php if ($news['dateAjout'] != $news['dateModif']) { ?>
     <p style="text-align: right;"><small><em>Modifiée le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
   <?php } ?>
 
   <div class="zone_comment text-center mx-auto" id="zone_comment">
-    <h3 style="text-align: center; padding-top: 25px; ">ESPACE COMMENTAIRES</h3>
- 
+    <h3 class="mt-5">ESPACE COMMENTAIRES</h3>
+
     <?php
       if (empty($comments))
       {
     ?>
-    <p>Aucun commentaire n'a encore été posté. Soyez le premier à en laisser un !</p>
+      <p>Aucun commentaire n'a encore été posté. Soyez le premier à en laisser un !</p>
     <?php
   }
  
@@ -27,36 +27,36 @@
     <fieldset>
     <div class="comment">
 
-      <legend>
-
-        Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?><br>
-        <?php 
-          if ($user->isAuthenticated()) { ?> 
-            <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn btn-warning" role="button">Modifier</a> 
-            <a href="admin/comment-delete-<?= $comment['id'] ?>.html" class="btn btn-danger" role="button">Supprimer</a>
-          <?php }
-
-          elseif ($user->isAuthenticated() && $comment['report'] == 1) { ?>
-            <div class="alert alert-danger">
-              <p style="margin:0;"><i class="fas fa-exclamation-triangle"></i> Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
+      <legend class="pb-2">
+        <h5 class="pt-2">Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?></h5>
+      
+          <?php 
+          if ($user->isAuthenticated() && $comment['report'] == 1) { ?>
+            <div class="alert alert-danger my-1">
+              <p style="margin:0;"><i class="fas fa-exclamation-triangle"></i><br> Commentaire signalé</p>
             </div>
           <?php } 
 
+          if ($user->isAuthenticated()) { ?> 
+            <a href="admin/comment-update-<?= $comment['id'] ?>.html" class="btn-sm btn-warning" role="button">Modifier</a> 
+            <a href="admin/comment-delete-<?= $comment['id'] ?>.html" class="btn-sm btn-danger" role="button">Supprimer</a>
+          <?php }
+
           elseif ($user->isAuthenticated() == false && $comment['report'] == 1) { ?>
-            <div class="alert alert-info">
-              <p style="margin:0; font-size: 1vw">Le commentaire a déjà signalé et il sera modéré dans les plus brefs délais !</p>
+            <div class="alert alert-info my-1">
+              <p style="margin:0;">Le commentaire a déjà signalé et il sera modéré dans les plus brefs délais !</p>
             </div>
           <?php } 
           
           elseif ($user->isAuthenticated() == false && $comment['report'] == 0) { ?>
-            <a href="/comment-report-<?= $comment['id'] ?>.html" class="bt" role="button">Signaler</a>
+            <a href="/comment-report-<?= $comment['id'] ?>.html" class="btn-sm btn-danger" role="button">Signaler</a>
           <?php } ?>
-
-
-
       </legend>
 
-      <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
+
+      
+
+      <p><?= nl2br($comment['contenu']) ?></p>
 
       </div>
     </fieldset>

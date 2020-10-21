@@ -8,7 +8,7 @@
     </div>
 
     <!-- Login Form -->
-    <h2>Ajouter une news</h2>
+    <h2>Ajouter un billet</h2>
       <form action="" method="post">
         <p>
           <?= $form ?>

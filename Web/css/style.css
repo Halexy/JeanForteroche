@@ -15,31 +15,39 @@ html, body {
 
 h1 {
   color: var(--title-color);
-  font-family: "Lora", serif;
+  font-size: 1.7rem;
 }
 
 h2 {
   color: var(--title-color);
-  font-family: "Lora", serif;
   padding: 0.5vw 0;
   text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 h3 {
   color: var(--icon-color);
-  font-family: "Lora", serif;
-  padding: 0.2vw 0;
+  font-size: 1.5rem;
 }
 
 h4 {
   color: var(--icon-color);
-  font-family: "Lora", serif;
   padding: 0.5vw 0;
+  font-size: 1.5rem;
+}
+
+h5 {
+  color: var(--title-color);
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.2rem;
 }
 
 p {
   color: var(--black-color);
   font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.1rem;
 }
 
 .container-fluid, .container, .row {
@@ -106,7 +114,6 @@ footer {
 }
 footer p, footer i {
   color: var(--white-color);
-  font-size: 0.9vw;
   text-align: center;
 }
 footer h5 {
@@ -173,7 +180,7 @@ footer h5 {
   text-align: center;
   margin: 20px 0px;
   color: red;
-  font-size: 1vw;
+  font-size: 1rem;
 }
 
 .errormsg {
@@ -199,7 +206,6 @@ footer h5 {
 
 .border {
   background-color: var(--title-color);
-  width: 30%;
   margin: 50px auto 75px auto;
   height: 3px;
 }
@@ -211,7 +217,7 @@ footer h5 {
   margin: 2vw auto;
   border-radius: 5px;
   width: 18rem;
-  max-height: 30rem;
+  min-height: 20.5rem;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -222,8 +228,15 @@ footer h5 {
 .card .card-text {
   max-height: 250px;
 }
+.card .bt-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+}
 .card .bt {
-  margin: 10px auto;
+  margin: auto;
   padding: 10px 30px;
 }
 
@@ -247,8 +260,6 @@ footer h5 {
 }
 .wrapper h2 {
   text-align: center;
-  font-size: 1.2vw;
-  font-weight: 600;
   text-transform: uppercase;
   display: inline-block;
   margin: 5px 10px 10px 10px;
@@ -269,7 +280,7 @@ footer h5 {
   text-align: center;
 }
 .formContent .label {
-  font-size: 1vw;
+  font-size: 1rem;
   color: var(--title-color);
   font-family: "Lora", serif;
   width: 100%;
@@ -279,7 +290,7 @@ footer h5 {
   max-width: 80%;
 }
 .formContent .icon {
-  width: 75px;
+  max-width: 60px;
   margin: -30px 0 15px 0;
   padding: 15px;
   border-radius: 30px;
@@ -437,7 +448,7 @@ input[type=text]:placeholder {
   width: 80%;
 }
 .article .comment {
-  margin: 50px 0;
+  margin: 20px 0;
   border: 1px solid var(--title-color);
   border-radius: 25px;
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.1);
