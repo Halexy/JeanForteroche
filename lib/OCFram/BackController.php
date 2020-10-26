@@ -1,8 +1,11 @@
 <?php
 namespace OCFram;
+
+// Exécuter une action, obtenir la page associée au contrôleur, modifier le module, l'action et la vue associés au contrôleur.
  
 abstract class BackController extends ApplicationComponent
 {
+  // Attribution d' instances
   protected $action = '';
   protected $module = '';
   protected $page = null;
@@ -67,6 +70,7 @@ abstract class BackController extends ApplicationComponent
  
     $this->view = $view;
  
+    // Informer la page concernée
     $this->page->setContentFile(__DIR__.'/../../App/'.$this->app->name().'/Modules/'.$this->module.'/Views/'.$this->view.'.php');
   }
 

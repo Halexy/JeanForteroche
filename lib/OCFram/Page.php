@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+// Ajouter variable à la page, assigner une vue et générer layout
  
 class Page extends ApplicationComponent
 {
@@ -16,6 +18,7 @@ class Page extends ApplicationComponent
     $this->vars[$var] = $value;
   }
  
+  // Inclure les pages pour générer leur contenu, et stocker ce contenu dans une variable
   public function getGeneratedPage()
   {
     if (!file_exists($this->contentFile))
@@ -24,7 +27,8 @@ class Page extends ApplicationComponent
     }
  
     $user = $this->app->user();
- 
+
+    // transformation du tableau stocké dans l'attribut $vars en variables 
     extract($this->vars);
  
     ob_start();

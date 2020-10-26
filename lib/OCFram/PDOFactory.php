@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+// Connection à la PDO
  
 class PDOFactory
 {

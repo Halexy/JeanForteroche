@@ -1,6 +1,7 @@
 <?php
 namespace OCFram;
  
+// Champs des formulaires
 abstract class Field
 {
   use Hydrator;
@@ -11,6 +12,7 @@ abstract class Field
   protected $validators = [];
   protected $value;
  
+  //  Liste les attributs avec leur valeur afin d'hydrater l'objet.
   public function __construct(array $options = [])
   {
     if (!empty($options))
@@ -19,8 +21,10 @@ abstract class Field
     }
   }
  
+  // Renvoyer le code HTML du champ.
   abstract public function buildWidget();
  
+
   public function isValid()
   {
     foreach ($this->validators as $validator)

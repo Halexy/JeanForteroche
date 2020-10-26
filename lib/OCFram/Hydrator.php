@@ -1,6 +1,7 @@
 <?php
 namespace OCFram;
  
+// Hydrator qui implémentera hydrate() et les classes Entity et Field l'utiliseront
 trait Hydrator
 {
   public function hydrate($data)

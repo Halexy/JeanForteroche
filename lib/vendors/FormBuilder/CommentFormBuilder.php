@@ -6,7 +6,8 @@ use \OCFram\StringField;
 use \OCFram\TextField;
 use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
- 
+
+// Implementer build() et appeler successivement les méthodes add() sur notre formulaire 
 class CommentFormBuilder extends FormBuilder
 {
   public function build()

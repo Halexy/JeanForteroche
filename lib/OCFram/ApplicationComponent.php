@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+//stocker l'instance de l'application exécutée pendant la construction de l'objet
  
 abstract class ApplicationComponent
 {

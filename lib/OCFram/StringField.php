@@ -4,7 +4,8 @@ namespace OCFram;
 class StringField extends Field
 {
   protected $maxLength;
- 
+
+  // Construire champs de input
   public function buildWidget()
   {
     $widget = '';

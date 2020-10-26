@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+// Savoir quelle page doit-être exécutée
  
 class Router
 {
@@ -28,18 +30,18 @@ class Router
           $varsNames = $route->varsNames();
           $listVars = [];
  
-          // On crée un nouveau tableau clé/valeur
+          // Création d'un nouveau tableau clé/valeur
           // (clé = nom de la variable, valeur = sa valeur)
           foreach ($varsValues as $key => $match)
           {
-            // La première valeur contient entièrement la chaine capturée (voir la doc sur preg_match)
+            // La première valeur contient entièrement la chaine capturée
             if ($key !== 0)
             {
               $listVars[$varsNames[$key - 1]] = $match;
             }
           }
  
-          // On assigne ce tableau de variables � la route
+          // On assigne ce tableau de variables à la route
           $route->setVars($listVars);
         }
  

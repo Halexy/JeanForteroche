@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+// Assigner attribut, obtenir sa valeur, authentifier utilisateur et le savoir.
  
 session_start();
  
@@ -33,6 +35,7 @@ class User
     $_SESSION[$attr] = $value;
   }
  
+  // Assigner un message à l'utilisateur que l'on affichera sur la page. Si l'utilisateur a un tel message, 
   public function setAuthenticated($authenticated = true)
   {
     if (!is_bool($authenticated))
@@ -42,7 +45,8 @@ class User
  
     $_SESSION['auth'] = $authenticated;
   }
- 
+
+ // Récupérer ce message.
   public function setFlash($value)
   {
     $_SESSION['flash'] = $value;

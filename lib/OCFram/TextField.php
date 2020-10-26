@@ -5,7 +5,8 @@ class TextField extends Field
 {
   protected $cols;
   protected $rows;
- 
+
+ // Construire champs de texte
   public function buildWidget()
   {
     $widget = '';

@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+// Lire toutes les méthodes que le manager doit implémenter
  
 abstract class Manager
 {

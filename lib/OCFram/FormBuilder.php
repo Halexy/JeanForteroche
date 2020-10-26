@@ -1,6 +1,7 @@
 <?php
 namespace OCFram;
  
+// Construire et renvoyer formulaire
 abstract class FormBuilder
 {
   protected $form;

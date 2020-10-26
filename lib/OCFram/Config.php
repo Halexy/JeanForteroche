@@ -1,14 +1,18 @@
 <?php
 namespace OCFram;
+
+// Recuperer un parametre et sa valeur
  
 class Config extends ApplicationComponent
 {
   protected $vars = [];
- 
+
+ // Retourner le paramètre précédemment enregistré.
   public function get($var)
   {
     if (!$this->vars)
     {
+      // Premier appel à la méthode alors
       $xml = new \DOMDocument;
       $xml->load(__DIR__.'/../../App/'.$this->app->name().'/Config/app.xml');
  

@@ -7,6 +7,7 @@ use \OCFram\TextField;
 use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
  
+// Implementer build() et appeler successivement les méthodes add() sur notre formulaire 
 class NewsFormBuilder extends FormBuilder
 {
   public function build()

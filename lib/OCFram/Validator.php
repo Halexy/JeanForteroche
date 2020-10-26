@@ -1,6 +1,7 @@
 <?php
 namespace OCFram;
  
+// Implementer accesseur et le mutateur du message d'erreur
 abstract class Validator
 {
   protected $errorMessage;

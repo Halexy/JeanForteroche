@@ -1,8 +1,11 @@
 <?php
 namespace OCFram;
  
+// Implementation du constructeur, methode, getters/setters, interface arrayaccess
+
 abstract class Entity implements \ArrayAccess
 {
+  //// Utilisation du trait Hydrator pour que les entités puissent être hydratées
   use Hydrator;
  
   protected $erreurs = [],

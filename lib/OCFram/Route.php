@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+// Routes à parcourir par le router
  
 class Route
 {

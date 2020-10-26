@@ -1,6 +1,7 @@
 <?php
 namespace OCFram;
  
+// Traiter le formulaire une fois qu'il a été envoyé
 class FormHandler
 {
   protected $form;
@@ -18,6 +19,7 @@ class FormHandler
   {
     if($this->request->method() == 'POST' && $this->form->isValid())
     {
+      // manager correspondant à l'entité
       $this->manager->save($this->form->entity());
  
       return true;

@@ -5,21 +5,24 @@ class Form
 {
   protected $entity;
   protected $fields = [];
- 
+
+ // Récupérer entité et invoquer setter correspondant
   public function __construct(Entity $entity)
   {
     $this->setEntity($entity);
   }
  
+  // Ajouter champ à la liste
   public function add(Field $field)
   {
-    $attr = $field->name(); // On récupère le nom du champ.
-    $field->setValue($this->entity->$attr()); // On assigne la valeur correspondante au champ.
+    $attr = $field->name(); // Recupérer le nom du champ.
+    $field->setValue($this->entity->$attr()); // Assigner la valeur correspondante au champ.
  
-    $this->fields[] = $field; // On ajoute le champ passé en argument à la liste des champs.
+    $this->fields[] = $field; // Ajouter le champ passé en argument à la liste des champs.
     return $this;
   }
  
+  // Générer le formulaire
   public function createView()
   {
     $view = '';

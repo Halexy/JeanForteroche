@@ -11,16 +11,14 @@ class NewsController extends BackController
 {
   public function executeIndex(HTTPRequest $request)
   {
-    $nombreNews = $this->app->config()->get('nombre_news');
     $nombreCaracteres = $this->app->config()->get('nombre_caracteres');
  
-    // On ajoute une définition pour le titre.
-    $this->page->addVar('title', 'Liste des '.$nombreNews.' dernières news');
+    $this->page->addVar('title', "Billet simple pour l'Alaska");
  
-    // On récupère le manager des news.
+    // Récupèrer le manager des news.
     $manager = $this->managers->getManagerOf('News');
  
-    $listeNews = $manager->getList(0, $nombreNews);
+    $listeNews = $manager->getList();
  
     foreach ($listeNews as $news)
     {
@@ -33,7 +31,7 @@ class NewsController extends BackController
       }
     }
  
-    // On ajoute la variable $listeNews à la vue.
+    // Ajouter la variable $listeNews à la vue.
     $this->page->addVar('listeNews', $listeNews);
   }
  
@@ -66,7 +64,7 @@ class NewsController extends BackController
 
   public function executeInsertComment(HTTPRequest $request)
   {
-    // Si le formulaire a été envoyé.
+    // Si le formulaire a été envoyé, création du commentaire avec valeurs du form
     if ($request->method() == 'POST')
     {
       $comment = new Comment([
@@ -95,7 +93,7 @@ class NewsController extends BackController
     }
  
     $this->page->addVar('comment', $comment);
-    $this->page->addVar('form', $form->createView());
+    $this->page->addVar('form', $form->createView()); // Passer le formulaire généré à la vue.
     $this->page->addVar('title', 'Ajout d\'un commentaire');
   }
 }

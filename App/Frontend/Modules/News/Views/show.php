@@ -56,7 +56,7 @@
 
       
 
-      <p><?= nl2br($comment['contenu']) ?></p>
+      <p><?= htmlspecialchars($comment['contenu']) ?></p>
 
       </div>
     </fieldset>

@@ -1,6 +1,8 @@
 <?php
 namespace OCFram;
  
+// Passer le DAO. Les méthodes filles auront accès à cet objet (facilement)
+
 class Managers
 {
   protected $api = null;

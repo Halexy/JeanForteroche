@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+
+// Obtenir var GET/POST, cookie, méthode de requête page, uri page
  
 class HTTPRequest extends ApplicationComponent
 {
