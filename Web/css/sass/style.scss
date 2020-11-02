@@ -20,7 +20,9 @@ html, body
 h1
 {
     color: var(--title-color);
-    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 h2
@@ -58,6 +60,11 @@ p
     color: var(--black-color);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.1rem;
+}
+
+small 
+{
+  font-size: 0.8em
 }
 
 .container-fluid, .container, .row
@@ -185,24 +192,38 @@ footer
 .fa-facebook {
   background: #3B5998;
   color: white;
+
+    &:hover{
+      background: white;
+      color: #3B5998;
+      opacity: 1;
+    }
 }
 
 /* Twitter */
-.fa-twitter {
+.fa-twitter 
+{
   background: #55ACEE;
   color: white;
+
+    &:hover{
+      background: white;
+      color: #55ACEE;
+      opacity: 1;
+    }
 }
 
-.fa-google
+.fa-google, .fa-youtube
 {
   color: red;
   background: white;
 }
 
-.fa-youtube
+.fa-google:hover, .fa-youtube:hover
 {
-  color: red;
-  background: white;
+    background: red;
+    color: white;
+    opacity: 1;
 }
 
 .hasflash, .errormsg
@@ -261,7 +282,7 @@ footer
   margin: 2vw auto;
   border-radius: 5px;
   width: 18rem;
-  min-height: 20.5rem;
+  min-height: 25rem;
 
   &:hover 
     {

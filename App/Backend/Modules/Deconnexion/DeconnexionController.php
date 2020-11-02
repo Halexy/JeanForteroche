@@ -6,7 +6,7 @@ use \OCFram\HTTPRequest;
 
 class DeconnexionController extends BackController
 {
-    public function executeLogout ()
+    public function executeLogout()
     {
         $this->app->user()->setAuthenticated(false);
         $this->app->httpResponse()->redirect('.');

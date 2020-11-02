@@ -5,7 +5,7 @@ class StringField extends Field
 {
   protected $maxLength;
 
-  // Construire champs de input
+  // Construire champs de texte
   public function buildWidget()
   {
     $widget = '';
@@ -15,7 +15,7 @@ class StringField extends Field
       $widget .= '<p class="errormsg">'. $this->errorMessage. '</p> <br />';
     }
  
-    $widget .= '<label class="label">'.$this->label.'</label><input type="text" name="'.$this->name.'" class="fadeIn second" ';
+    $widget .= '<label class="label">'.$this->label.'</label><input type="text" name="'.$this->name.'" class="fadeIn first" ';
  
     if (!empty($this->value))
     {

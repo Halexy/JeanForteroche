@@ -8,6 +8,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Projet 4 openclassroom / Création d'un blog pour un écrivain">
+    <meta name="keywords" content="Projet, Openclassroom, HTML, SCSS, PHP">
+    <meta name="author" content="Alexy Hajjar">
    
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -29,7 +32,7 @@
   <body>
     <div id="wrap">
 
-  <!-- Navbar -->  
+<!-- Navbar Bootstrap-->  
     <nav class="navbar navbar-expand-lg navbar-light bg-black">
       <a class="navbar-brand" href="/">
         <img src="/images/logo.png" width="60" height="60" class="d-inline-block" alt="logo" >
@@ -50,6 +53,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/#footer">Contact</a>
           </li>
+          <li class="nav-item">
+            <?php if ($user->isAuthenticated() == false) { ?>
+              <a class="nav-link" href="/admin/connexion" role="button">Connexion</a>
+            <?php } ?>
+          </li>
         </ul>
 
         <?php if ($user->isAuthenticated()) { ?>
@@ -59,14 +67,8 @@
             <a class="bt btn-danger " href="/admin/logout" role="button">Déconnexion</a>
           </div>
         <?php } ?>
-
-        <?php if ($user->isAuthenticated() == false) { ?>
-          <div class="pull-right">
-            <a class="bt" href="/admin/connexion" role="button">Connexion</a>
-          </div>
-        <?php } ?>
-        
       </div>
+
     </nav>
   </div>
 
@@ -97,7 +99,6 @@
   <div class="container text-center text-md-left">
     <div class="row">
 
-
       <div class="col-lg-4 col-10 mx-auto">
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4 lead">Contacter Jean Forteroche</h5>
         <p class="lead">Pour contacter Jean forteroche, plusieurs moyens s'offrent à vous et vous pouvez les retrouver sur votre droite.
@@ -111,7 +112,7 @@
         <ul class="list-unstyled">
           <li>
             <p class="lead">
-              <i class="fas fa-home mb-3 lead"></i><br>
+              <em class="fas fa-home mb-3 lead"></em><br>
               52, rue de Penthièvre, 92800 PUTEAUX
             </p>
           </li>
@@ -125,7 +126,7 @@
         <ul class="list-unstyled">
           <li>
             <p class="lead">
-              <i class="fas fa-envelope mb-3 lead"></i><br>
+              <em class="fas fa-envelope mb-3 lead"></em><br>
               contact@jeanforteroche.com
             </p>
           </li>
@@ -139,7 +140,7 @@
         <ul class="list-unstyled">
           <li>
             <p class="lead">
-              <i class="fas fa-phone mb-3 lead"></i><br>
+              <em class="fas fa-phone mb-3 lead"></em><br>
               01.28.04.43.39 
             </p>
           </li>
@@ -151,11 +152,11 @@
   </div>
 
   <!-- Social buttons -->
-  <div class="social-button text-center mb-5 ">
-    <a href="https://www.facebook.com/" class="fa fa-facebook mt-3" target="_blank"></a>
-    <a href="https://twitter.com/" class="fa fa-twitter mt-3" target="_blank"></a>
-    <a href="https://www.google.com/" class="fa fa-google mt-3" target="_blank"></a>
-    <a href="https://www.youtube.com/" class="fa fa-youtube mt-3" target="_blank"></a>
+  <div class="social-button text-center mb-5 mt-3">
+    <a href="https://www.facebook.com/"><em class="fa fa-facebook"></em><span></span></a>
+    <a href="https://twitter.com/"><em class="fa fa-twitter"></em><span></span></a>
+    <a href="https://www.google.com/"><em class="fa fa-google"></em><span></span></a>
+    <a href="https://www.youtube.com/"><em class="fa fa-youtube"></em><span></span></a>
   </div>
 
   <!-- Admin connection -->
@@ -167,7 +168,10 @@
   <?php } ?>
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3"><p>© 2020 Copyright:<a href="https://alexyhajjar.fr/"> alexyhajjar.fr</a></p></div>
+  <div class="footer-copyright text-center py-3">
+    <p>© 2020 Copyright:<a href="https://alexyhajjar.fr/"> alexyhajjar.fr</a></p>
+    <p>Site fictif pour projet Openclassroom</p>
+  </div>
   
 </footer>
 
@@ -178,8 +182,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-
 
   <!-- tinyMCE -->
   <?php if ($user->isAuthenticated()) { ?>

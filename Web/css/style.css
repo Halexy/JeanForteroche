@@ -15,7 +15,9 @@ html, body {
 
 h1 {
   color: var(--title-color);
-  font-size: 1.7rem;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 h2 {
@@ -48,6 +50,10 @@ p {
   color: var(--black-color);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.1rem;
+}
+
+small {
+  font-size: 0.8em;
 }
 
 .container-fluid, .container, .row {
@@ -159,21 +165,32 @@ footer h5 {
   background: #3B5998;
   color: white;
 }
+.fa-facebook:hover {
+  background: white;
+  color: #3B5998;
+  opacity: 1;
+}
 
 /* Twitter */
 .fa-twitter {
   background: #55ACEE;
   color: white;
 }
+.fa-twitter:hover {
+  background: white;
+  color: #55ACEE;
+  opacity: 1;
+}
 
-.fa-google {
+.fa-google, .fa-youtube {
   color: red;
   background: white;
 }
 
-.fa-youtube {
-  color: red;
-  background: white;
+.fa-google:hover, .fa-youtube:hover {
+  background: red;
+  color: white;
+  opacity: 1;
 }
 
 .hasflash, .errormsg {
@@ -217,7 +234,7 @@ footer h5 {
   margin: 2vw auto;
   border-radius: 5px;
   width: 18rem;
-  min-height: 20.5rem;
+  min-height: 25rem;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);

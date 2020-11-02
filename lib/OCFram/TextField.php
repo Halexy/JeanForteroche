@@ -17,7 +17,7 @@ class TextField extends Field
     }
 
  
-    $widget .= '<label class="label">'.$this->label.'</label><textarea name="'.$this->name.'" class="textarea"';
+    $widget .= '<label class="label">'.$this->label.'</label><textarea name="'.$this->name.'" class="textarea fadeIn second"';
  
     if (!empty($this->cols))
     {

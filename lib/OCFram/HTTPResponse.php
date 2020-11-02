@@ -1,7 +1,7 @@
 <?php
 namespace OCFram;
  
-// Ajouter header et cookies, assigner page et envoyer reponse, redirection / 404
+// Ajouter header, assigner page et envoyer reponse, redirection / 404
 
 class HTTPResponse extends ApplicationComponent
 {

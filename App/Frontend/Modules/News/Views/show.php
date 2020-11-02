@@ -1,11 +1,11 @@
 <div class= "container article">
 
-  <p>Par <em><?= $news['auteur'] ?></em>, le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
+<p><small>Par <em><?= $news['auteur'] ?></em>, le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></small></p>
   <h2 class="text-center"><?= $news['titre'] ?></h2>
-  <p class="text-center"><?= nl2br($news['contenu']) ?></p>
+  <p class="text-center"><?= ($news['contenu']) ?></p>
  
   <?php if ($news['dateAjout'] != $news['dateModif']) { ?>
-    <p style="text-align: right;"><small><em>Modifiée le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
+    <p class="text-right"><small><em>Modifiée le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
   <?php } ?>
 
   <div class="zone_comment text-center mx-auto" id="zone_comment">
@@ -13,27 +13,24 @@
 
     <?php
       if (empty($comments))
-      {
-    ?>
+      { ?>
       <p>Aucun commentaire n'a encore été posté. Soyez le premier à en laisser un !</p>
-    <?php
-  }
- 
+      <?php 
+      }
+      
   foreach ($comments as $comment)
   {
   ?>
-
-
     <fieldset>
     <div class="comment">
 
       <legend class="pb-2">
-        <h5 class="pt-2">Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?></h5>
+        <h5 class="pt-2">Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong><small> le <?= $comment['date']->format('d/m/Y à H\hi') ?></small></h5>
       
           <?php 
           if ($user->isAuthenticated() && $comment['report'] == 1) { ?>
             <div class="alert alert-danger my-1">
-              <p style="margin:0;"><i class="fas fa-exclamation-triangle"></i><br> Commentaire signalé</p>
+              <p class="m-0"><i class="fas fa-exclamation-triangle"></i><br> Commentaire signalé</p>
             </div>
           <?php } 
 
@@ -44,34 +41,27 @@
 
           elseif ($user->isAuthenticated() == false && $comment['report'] == 1) { ?>
             <div class="alert alert-info my-1">
-              <p style="margin:0;">Le commentaire a déjà signalé et il sera modéré dans les plus brefs délais !</p>
+            <p class="m-0">Le commentaire a déjà signalé et il sera modéré dans les plus brefs délais !</p>
             </div>
           <?php } 
           
           elseif ($user->isAuthenticated() == false && $comment['report'] == 0) { ?>
             <a href="/comment-report-<?= $comment['id'] ?>.html" class="btn-sm btn-danger" role="button">Signaler</a>
           <?php } ?>
-      </legend>
-
-
-      
+      </legend>      
 
       <p><?= htmlspecialchars($comment['contenu']) ?></p>
 
-      </div>
+    </div>
     </fieldset>
     <?php
     }
-    ?>
 
-    <?php if ($user->isAuthenticated() == false) { ?>
+    if ($user->isAuthenticated() == false) { ?>
 
       <p><a href="commenter-<?= $news['id'] ?>.html" class="bt" role="button">Ajouter un commentaire</a></p>
 
     <?php } ?>
-
-
-  
 
   </div>
 </div>
